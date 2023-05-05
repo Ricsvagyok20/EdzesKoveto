@@ -1,0 +1,14 @@
+<div class="main_component">
+    <div class="div-flex">
+        <mat-grid-list [cols]="!workouts ? 0 : workouts.length" rowHeight="3:1">
+            <mat-grid-tile *ngFor="let i of workouts" [ngStyle]="{'background-color': 'blue', 'color': 'black'}">
+                <h2 id="link" [routerLink]="'/movements'">{{i.name}}</h2>
+                <table>
+                    <tr>
+                        <td *ngFor="let j of i.movements">{{j.name}}</td>
+                    </tr>
+                </table>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>
