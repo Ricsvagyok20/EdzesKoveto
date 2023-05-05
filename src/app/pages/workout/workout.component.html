@@ -5,7 +5,7 @@
                 <h2 id="link" [routerLink]="'/movements'">{{i.name}}</h2>
                 <table>
                     <tr>
-                        <td *ngFor="let j of i.movements">{{j.name}}</td>
+                        <td *ngFor="let j of i.movements"><img [src]="j.image_url"></td>
                     </tr>
                 </table>
             </mat-grid-tile>

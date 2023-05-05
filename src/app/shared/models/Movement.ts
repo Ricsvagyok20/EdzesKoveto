@@ -1,6 +1,7 @@
 export interface Movement {
     name: string;
     how_to: string;
+    sets: number;
     length: number;
-    photo_url?: string;
+    image_url: string;
 }
