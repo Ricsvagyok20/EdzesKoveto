@@ -10,6 +10,22 @@
     height: 100vh;
 }
 
+h1{
+    font-style: oblique;
+    color:purple;
+}
+
 #link{
     cursor: pointer;
+}
+
+td{
+    padding: 10px;
+}
+
+#footer{
+    width: 30%;
+    justify-content: right;
+    background-color: white;
+    color: black;
 }

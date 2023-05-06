@@ -35,7 +35,7 @@ export class CalorieCounterComponent implements OnInit {
     this.userService.getById(user.uid).subscribe(data => {
       this.currentUser = data;
     });
-    this.foodService.getFoods().subscribe(data => {
+    this.foodService.getFoods(user.uid).subscribe(data => {
       this.foods = data;
       console.log(this.foods);
     });

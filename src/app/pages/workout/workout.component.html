@@ -4,7 +4,7 @@
             <mat-grid-tile *ngFor="let i of workouts" [ngStyle]="{'background-color': 'lightgreen', 'color': 'black'}">
                 <table>
                     <tr>
-                        <th colspan="3"><h2 id="link" [routerLink]="'/workout/' + i.name">{{i.name}}</h2></th>
+                        <th colspan="3"><h1 id="link" [routerLink]="'/workout/' + i.name">{{i.name}}</h1></th>
                     </tr>
                     <tr>
                         <th>Movements</th>
@@ -13,7 +13,7 @@
                     </tr>
                     <tr>
                         <td><p *ngFor="let j of i.movements">{{j.name}}</p></td>
-                        <td>{{i.length}}</td>
+                        <td>{{i.length}} minutes</td>
                         <td>{{i.calories_burned | kcalKJ}}</td>
                     </tr>
                 </table>
@@ -21,3 +21,4 @@
         </mat-grid-list>
     </div>
 </div>
+<div id="footer"><p>Click the italic words to see in depth information about the movements in each of our workouts!</p></div>
