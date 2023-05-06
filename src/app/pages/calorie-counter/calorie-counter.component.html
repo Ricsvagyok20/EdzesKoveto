@@ -11,8 +11,9 @@
                         <mat-icon matListItemIcon>fastfood</mat-icon>
                       <h3 matListItemTitle>{{food.name}}</h3>
                       <p matListItemLine>
-                        <span>{{food.calories}}</span>
-                        <span>{{food.protein}}</span>
+                        <span>{{food.calories}} kcal</span>
+                        <span>{{food.protein}} mg</span>
+                        <span><button class="buttons" mat-raised-button color="primary" (click)="deleteFood(food.id)">Delete</button></span>
                       </p>
                     </mat-list-item>
                   </mat-list>
@@ -42,7 +43,7 @@
                         </mat-form-field>
                     </div>
                     <div>
-                        <button mat-raised-button color="primary" type="submit">ADD</button>
+                        <button class="buttons" mat-raised-button color="primary" type="submit">ADD</button>
                     </div>
                 </form>
             </mat-card-actions>

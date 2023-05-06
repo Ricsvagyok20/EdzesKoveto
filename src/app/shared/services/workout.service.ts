@@ -14,7 +14,7 @@ export class WorkoutService {
   constructor(private afs: AngularFirestore, private storage: AngularFireStorage) { }
 
   loadWorkoutMeta(): Observable<Array<Workout>> {
-    return this.afs.collection<Workout>(this.collectionName, ref => ref.orderBy('name')).valueChanges();
+    return this.afs.collection<Workout>(this.collectionName, ref => ref.orderBy('name', 'desc')).valueChanges();
   }
 
   getWorkoutByName(name: string){

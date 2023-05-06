@@ -41,10 +41,6 @@ export class CalorieCounterComponent implements OnInit {
     });
   }
 
-  ngOnChanges(){
-    
-  }
-
   addFood(){
     const food: Food = {
       id: '',
@@ -55,6 +51,14 @@ export class CalorieCounterComponent implements OnInit {
     };
     this.foodService.create(food).then(_ => {
 
+    }).catch(error => {
+      console.log(error);
+    });
+  }
+
+  deleteFood(id: string){
+    this.foodService.delete(id).then(_ => {
+      
     }).catch(error => {
       console.log(error);
     });

@@ -22,6 +22,13 @@ span{
     padding-left: 10px;
 }
 
+.mat-list-base{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
 .mat-card-header{
     align-items: center;
 }
@@ -41,8 +48,13 @@ mat-list-item{
 }
 
 mat-list{
-    width: 50%;
+    width: 35%;
     justify-content: center;
+}
+
+.buttons{
+    background-color: aqua;
+    color: black;
 }
 
 form {
