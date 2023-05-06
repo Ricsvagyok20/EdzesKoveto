@@ -7,19 +7,19 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MovementsModule } from './movements/movements.module';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { KcalKJPipe } from 'src/app/shared/pipes/kcal-k-j.pipe';
+import { PipeExportModule } from '../../shared/pipe-export/pipe-export.module';
 
 @NgModule({
   declarations: [
-    WorkoutComponent,
-    KcalKJPipe
+    WorkoutComponent
   ],
   imports: [
     CommonModule,
     WorkoutRoutingModule,
     MatCardModule,
     MatIconModule,
-    MatGridListModule
+    MatGridListModule,
+    PipeExportModule
   ]
 })
 export class WorkoutModule { }
