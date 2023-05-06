@@ -1,11 +1,20 @@
 <div class="main_component">
     <div class="div-flex">
         <mat-grid-list [cols]="!workouts ? 0 : workouts.length" rowHeight="3:1">
-            <mat-grid-tile *ngFor="let i of workouts" [ngStyle]="{'background-color': 'blue', 'color': 'black'}">
-                <h2 id="link" [routerLink]="'/movements'">{{i.name}}</h2>
+            <mat-grid-tile *ngFor="let i of workouts" [ngStyle]="{'background-color': 'lightgreen', 'color': 'black'}">
                 <table>
                     <tr>
-                        <td *ngFor="let j of i.movements"><img [src]="j.image_url"></td>
+                        <th colspan="3"><h2 id="link" [routerLink]="'/workout/' + i.name">{{i.name}}</h2></th>
+                    </tr>
+                    <tr>
+                        <th>Movements</th>
+                        <th>Length</th>
+                        <th>Energy burned</th>
+                    </tr>
+                    <tr>
+                        <td><p *ngFor="let j of i.movements">{{j.name}}</p></td>
+                        <td>{{i.length}}</td>
+                        <td>{{i.calories_burned | kcalKJ}}</td>
                     </tr>
                 </table>
             </mat-grid-tile>

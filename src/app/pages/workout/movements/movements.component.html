@@ -1,0 +1,31 @@
+<div class="main_component div-flex">
+    <mat-card class="div-flex">
+        <ng-container *ngIf="!workouts ? 0 : workouts.length">
+            <div *ngFor="let workout of workouts">
+                <mat-card-header>
+                    <mat-card-title id="center">
+                        <span>{{workout.name}}</span>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content fxLayout="column">
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Image</th>
+                            <th>How to execute</th>
+                            <th>Sets</th>
+                            <th>Length</th>
+                        </tr>
+                        <tr *ngFor="let movement of workout.movements"> 
+                            <td>{{movement.name}}</td>
+                            <td><img [src]=movement.image_url></td>
+                            <td>{{movement.how_to}}</td>
+                            <td>{{movement.sets}}</td>
+                            <td>{{movement.length}} seconds</td>
+                        </tr>
+                    </table>
+                </mat-card-content>
+            </div>
+        </ng-container>
+    </mat-card>
+</div>

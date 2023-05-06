@@ -1,5 +1,51 @@
-<div class="main_component">
+<div class="main_component div-flex">
     <div class="div-flex">
-        <p>calories</p>
+        <h1>Calorie Counter</h1>
+        <span fxFlex="1 1 50%">
+            <mat-card-header>
+                <mat-card-title *ngIf="currentUser">{{currentUser.username}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-list class="matList">
+                    <mat-list-item *ngFor="let food of foods">
+                        <mat-icon matListItemIcon>fastfood</mat-icon>
+                      <h3 matListItemTitle>{{food.name}}</h3>
+                      <p matListItemLine>
+                        <span>{{food.calories}}</span>
+                        <span>{{food.protein}}</span>
+                      </p>
+                    </mat-list-item>
+                  </mat-list>
+            </mat-card-content>
+        </span>
+        <span fxFlex="1 1 50%">
+            <mat-card-actions>
+                <form [formGroup]="foodForm" (ngSubmit)="addFood()">
+                    <div>
+                        <mat-form-field>
+                            <mat-label for="name">Name: </mat-label>
+                            <input matInput type="text" formControlName="name" />
+                        </mat-form-field>
+                    </div>
+                    <div class="break"></div>
+                    <div>
+                        <mat-form-field>
+                            <mat-label for="calories">Calories: </mat-label>
+                            <input matInput type="number" formControlName="calories" />
+                        </mat-form-field>
+                    </div>
+                    <div class="break"></div>
+                    <div>
+                        <mat-form-field>
+                            <mat-label for="protein">Protein: </mat-label>
+                            <input matInput type="number" formControlName="protein" />
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <button mat-raised-button color="primary" type="submit">ADD</button>
+                    </div>
+                </form>
+            </mat-card-actions>
+        </span>
     </div>
 </div>

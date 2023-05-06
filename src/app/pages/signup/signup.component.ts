@@ -4,6 +4,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from '../../shared/services/auth.service';
 import { User } from '../../shared/models/User';
 import { UserService } from '../../shared/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -22,7 +23,10 @@ export class SignupComponent implements OnInit {
     })
   });
 
-  constructor(private location: Location, private authService: AuthService, private userService: UserService) { }
+  constructor(private location: Location,
+    private authService: AuthService,
+    private userService: UserService,
+    private router: Router) { }
 
   ngOnInit(): void {
 
@@ -38,11 +42,12 @@ export class SignupComponent implements OnInit {
         username: this.signUpForm.get('email')?.value.split('@')[0],
         name:{
           firstname: this.signUpForm.get('name.firstname')?.value,
-          lastname: this.signUpForm.get('name.firstname')?.value
+          lastname: this.signUpForm.get('name.lastname')?.value
         }
       };
       this.userService.create(user).then(_ => {
-        console.log('User added successfully!')
+        console.log('User added successfully!');
+        this.router.navigateByUrl('/main');
       }).catch(error => {
         console.error(error);
       });

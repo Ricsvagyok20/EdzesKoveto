@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-$bgcolor: azure;
+$bgcolor: rgb(33, 214, 127);
 
 html {
     background-color: $bgcolor;
@@ -41,3 +41,5 @@ body {
     height: 100%;
     background-color: rgba(0,0,0, 0.3);
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
